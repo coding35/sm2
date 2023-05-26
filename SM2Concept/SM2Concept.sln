@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM2Concept", "SM2Concept.csproj", "{BB94E23E-6348-46F2-8EF7-41059EBC9D77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM2Test", "..\SM2Test\SM2Test.csproj", "{C2BA9C8D-0D54-42DB-BA77-0595012AE473}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM2Core", "..\SM2Core\SM2Core.csproj", "{EAC6D7AF-4DAC-4BA6-991B-8497FE4B6486}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB94E23E-6348-46F2-8EF7-41059EBC9D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB94E23E-6348-46F2-8EF7-41059EBC9D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB94E23E-6348-46F2-8EF7-41059EBC9D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB94E23E-6348-46F2-8EF7-41059EBC9D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BA9C8D-0D54-42DB-BA77-0595012AE473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BA9C8D-0D54-42DB-BA77-0595012AE473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BA9C8D-0D54-42DB-BA77-0595012AE473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BA9C8D-0D54-42DB-BA77-0595012AE473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC6D7AF-4DAC-4BA6-991B-8497FE4B6486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC6D7AF-4DAC-4BA6-991B-8497FE4B6486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC6D7AF-4DAC-4BA6-991B-8497FE4B6486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC6D7AF-4DAC-4BA6-991B-8497FE4B6486}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

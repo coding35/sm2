@@ -1,0 +1,46 @@
+﻿@model SM2Core.Model.Abstract.Card;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.GetTitle()</h5>
+        <p id="Question" class="card-text">@Model.GetQuestion().GetText()</p>
+        <p id="Answer" class="card-text side-hidden">@Model.GetAnswer().GetText()</p>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <button id="FlipBtn" class="btn btn-primary float-start">Flip</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="NextBtn" class="btn btn-primary float-end">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $("#FlipBtn").click(function () {
+            $("#Question").toggle();
+            $("#Answer").toggle();
+        });
+        $("#NextBtn").click(function () {
+            $.ajax({
+                url: "/Home/NextCard",
+                type: "GET",
+                success: function (result) {
+                    console.log(result);
+                    $("#Question").text(result.question);
+                    $("#Answer").text(result.answer);
+                }
+            });
+        });
+    </script>
+
+}
