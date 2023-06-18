@@ -5,7 +5,9 @@ namespace SM2Core.Model.Card;
 
 public class NullCard : Abstract.Card
 {
+    public bool IsNull => true;
     public NullCard() : base(0, "", new Question(""), new Answer(""), DateTime.MinValue, new ScoreCard(), new FlipCard())
     {
+        
     }
 }

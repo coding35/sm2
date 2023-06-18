@@ -12,18 +12,19 @@ public class AdvanceCard : IAdvanceBehavior, IIterator<Abstract.Card>
 
     public void Next(SessionSubject.SubjectState state)
     {
-        _list = state.Cards;
-        state.CurrentCard = Next() ?? new NullCard();
-        if (state.CurrentCard.IsScored())
+        _list = state.Cards.Where(s => s.IsScored() == false).ToList();
+        if (HasNext())
         {
-            state.CurrentCard = Next() ?? new NullCard();
+            var card = GetIteration() == 0 ? CurrentItem() : Next();
+            if (!card.IsScored())
+            {
+                state.CurrentCard = CurrentItem();
+            }
         }
-        
-        //var card = state.Cards.FirstOrDefault(s => s.IsScored() == false);
-        //if(card != null)
-        //{
-        //    state.CurrentCard = card;
-        //}
+        else
+        {
+            state.CurrentCard = new NullCard();
+        }
     }
 
     public bool HasNext()
@@ -31,7 +32,7 @@ public class AdvanceCard : IAdvanceBehavior, IIterator<Abstract.Card>
         return _index < _list!.Count;
     }
 
-    public Abstract.Card? Next()
+    public Abstract.Card Next()
     {
         var item = _list![_index];
         _index++;
@@ -43,7 +44,7 @@ public class AdvanceCard : IAdvanceBehavior, IIterator<Abstract.Card>
         _list![_index] = default!;
     }
 
-    public Abstract.Card? CurrentItem()
+    public Abstract.Card CurrentItem()
     {
         var item = _list![_index];
         return item;
