@@ -1,3 +1,5 @@
+using SM2Core.Enum;
+using SM2Core.Factory;
 using SM2Core.Model.Abstract;
 using SM2Core.Model.Card;
 using SM2Core.Observer.Interface;
@@ -6,6 +8,7 @@ namespace SM2Core.Observer;
 
 public class SessionSubject : ISubject
 {
+    private readonly ICardFactory _cardFactory = new CardFactory();
     private List<IObserver?> Observers { get; set; }
     private SubjectState State { get; set; }
     
@@ -27,7 +30,12 @@ public class SessionSubject : ISubject
 
     public void NotifyObservers()
     {
-        Observers.ForEach(observer => observer.Update());
+        Observers.ForEach(observer => observer?.Update());
+    }
+    
+    public void LoadState(CardSourceType cardSourceType)
+    {
+        State.Cards = _cardFactory.LoadCards(cardSourceType);
     }
     
     public void UpdateState(List<Card> cards)

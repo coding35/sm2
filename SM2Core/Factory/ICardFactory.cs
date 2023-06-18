@@ -7,12 +7,8 @@ namespace SM2Core.Factory;
 
 public interface ICardFactory
 {
-    public Card CreateCard(int id, string title, CardSide answer, CardSide question, DateTime reviewDate);
-    List<Card> CreateCards();
-    
-    void LoadCards();
-    
+    Card CreateCard(int id, string title, CardText answer, CardText question, DateTime reviewDate);
     void SaveCards();
-    
     void ExecuteAlgorithm(AlgorithmType algorithmType);
+    public List<Card> LoadCards(CardSourceType cardSourceType);
 }

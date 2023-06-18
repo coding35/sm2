@@ -1,6 +1,6 @@
 namespace SM2Core.Interface;
 
-public interface ICardSide
+public interface ICardSideText
 {
     public string GetText();
 }

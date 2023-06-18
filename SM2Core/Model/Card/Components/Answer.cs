@@ -2,7 +2,7 @@ using SM2Core.Model.Abstract;
 
 namespace SM2Core.Model.Card.Components;
 
-public class Answer : CardSide
+public class Answer : CardText
 {
     public Answer(string answer)
     {

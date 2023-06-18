@@ -14,11 +14,12 @@ public abstract class Session : IObserver
         _sessionSubject = sessionSubject;
     }
 
-    public List<Card> Cards { get; protected set; } = new List<Card>();
+    public List<Card> Cards { get; protected init; } = new List<Card>();
 
+    
     private void Next()
     {
-        var state = _sessionSubject.GetState();
+        var state = _sessionSubject!.GetState();
         _nextCard.Next(state);
     } 
 
